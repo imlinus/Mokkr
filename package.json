@@ -1,0 +1,35 @@
+{
+  "name": "mokkr",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/mokkr.cjs.js",
+  "module": "dist/mokkr.esm.js",
+  "browser": "dist/mokkr.umd.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imlinus/Mokkr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imlinus/Mokkr/issues"
+  },
+  "homepage": "https://github.com/imlinus/Mokkr#readme",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "ms": "^2.1.1"
+  },
+  "devDependencies": {
+    "rollup": "^0.66.0",
+    "rollup-plugin-buble": "^0.19.4",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0"
+  }
+}
