@@ -1,4 +1,4 @@
-export const firstNameFemales = [
+export const femaleNames = [
   'Emily', 'Hannah', 'Madison', 'Ashley', 'Sarah', 'Alexis',
   'Samantha', 'Jessica', 'Elizabeth', 'Taylor', 'Lauren', 'Alyssa',
   'Kayla', 'Abigail', 'Brianna', 'Olivia', 'Emma', 'Megan', 'Grace',
@@ -16,7 +16,7 @@ export const firstNameFemales = [
   'Alexandria', 'Sabrina', 'Mia', 'Isabel', 'Molly', 'Leah'
 ]
 
-export const firstNameMales = [
+export const maleNames = [
   'Jacob', 'Michael', 'Matthew', 'Joshua', 'Christopher', 'Nicholas',
   'Andrew', 'Joseph', 'Daniel', 'Tyler', 'William', 'Brandon',
   'Ryan', 'John', 'Zachary', 'David', 'Anthony', 'James', 'Justin',

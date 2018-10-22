@@ -1,7 +1,7 @@
 {
   "name": "mokkr",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Need some mock data?",
   "main": "dist/mokkr.cjs.js",
   "module": "dist/mokkr.esm.js",
   "browser": "dist/mokkr.umd.js",
@@ -13,9 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/imlinus/Mokkr.git"
   },
-  "keywords": [],
+  "keywords": ["mock", "fake", "random data"],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/imlinus/Mokkr/issues"
   },
@@ -23,9 +23,6 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "ms": "^2.1.1"
-  },
   "devDependencies": {
     "rollup": "^0.66.0",
     "rollup-plugin-buble": "^0.19.4",

@@ -1,25 +1,18 @@
 import { random } from './utils/random'
 import { slug } from './utils/slug'
-import { firstNameFemales, firstNameMales, surNames, maleOrFemale } from './data/names'
+import { femaleNames, maleNames, surNames, maleOrFemale } from './data/names'
 import { glues, emails } from './data/internet'
 import { password } from './data/password'
 
 const mokkr = {
   firstName: (gender) => {
-    if (gender === 'female') {
-      return random(firstNameFemales)
-    } else if (gender === 'male') {
-      return random(firstNameMales)
-    }
+    if (gender === 'female') return random(femaleNames)
+    else if (gender === 'male') return random(maleNames)
   },
 
-  surName: () => {
-    return random(surNames)
-  },
+  surName: () => random(surNames),
 
-  maleOrFemale: () => {
-    return maleOrFemale()
-  },
+  maleOrFemale: () => maleOrFemale(),
 
   email: (firstName, surName) => {
     const name = slug(firstName)
@@ -29,8 +22,22 @@ const mokkr = {
     return email
   },
 
-  password: (len = 10) => {
-    return password(len)
+  password: (len = 10) => password(len),
+
+  random: () => {
+    const gender = mokkr.maleOrFemale()
+    const firstName = mokkr.firstName(gender)
+    const surName = mokkr.surName()
+    const email = mokkr.email(firstName, surName)
+    const pass = mokkr.password()
+
+    return {
+      gender,
+      firstName,
+      surName,
+      email,
+      pass
+    }
   }
 }
 

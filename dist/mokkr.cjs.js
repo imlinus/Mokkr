@@ -8,7 +8,7 @@ var slug = function (str) {
   return str.toLowerCase()
 };
 
-var firstNameFemales = [
+var femaleNames = [
   'Emily', 'Hannah', 'Madison', 'Ashley', 'Sarah', 'Alexis',
   'Samantha', 'Jessica', 'Elizabeth', 'Taylor', 'Lauren', 'Alyssa',
   'Kayla', 'Abigail', 'Brianna', 'Olivia', 'Emma', 'Megan', 'Grace',
@@ -26,7 +26,7 @@ var firstNameFemales = [
   'Alexandria', 'Sabrina', 'Mia', 'Isabel', 'Molly', 'Leah'
 ];
 
-var firstNameMales = [
+var maleNames = [
   'Jacob', 'Michael', 'Matthew', 'Joshua', 'Christopher', 'Nicholas',
   'Andrew', 'Joseph', 'Daniel', 'Tyler', 'William', 'Brandon',
   'Ryan', 'John', 'Zachary', 'David', 'Anthony', 'James', 'Justin',
@@ -72,10 +72,15 @@ var glues = [
 
 var emails = [
   'gmail.com',
+  'googlemail.com',
   'yahoo.com',
   'hotmail.com',
   'mail.com',
-  'msn.com'
+  'msn.com',
+  'outlook.com',
+  'facebook.com',
+  'protonmail.com',
+  'icloud.com'
 ];
 
 var password = function (len) {
@@ -94,20 +99,13 @@ var password = function (len) {
 
 var mokkr = {
   firstName: function (gender) {
-    if (gender === 'female') {
-      return random(firstNameFemales)
-    } else if (gender === 'male') {
-      return random(firstNameMales)
-    }
+    if (gender === 'female') { return random(femaleNames) }
+    else if (gender === 'male') { return random(maleNames) }
   },
 
-  surName: function () {
-    return random(surNames)
-  },
+  surName: function () { return random(surNames); },
 
-  maleOrFemale: function () {
-    return maleOrFemale()
-  },
+  maleOrFemale: function () { return maleOrFemale(); },
 
   email: function (firstName, surName) {
     var name = slug(firstName);
@@ -120,7 +118,23 @@ var mokkr = {
   password: function (len) {
     if ( len === void 0 ) len = 10;
 
-    return password(len)
+    return password(len);
+},
+
+  random: function () {
+    var gender = mokkr.maleOrFemale();
+    var firstName = mokkr.firstName(gender);
+    var surName = mokkr.surName();
+    var email = mokkr.email(firstName, surName);
+    var pass = mokkr.password();
+
+    return {
+      gender: gender,
+      firstName: firstName,
+      surName: surName,
+      email: email,
+      pass: pass
+    }
   }
 };
 
