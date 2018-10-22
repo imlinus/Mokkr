@@ -39,7 +39,7 @@ Will generate:
 ```
 
 ### API
-```
+```js
 const gender = mokkr.maleOrFemale()
 const firstName = mokkr.firstName(gender)
 const surName = mokkr.surName()
